@@ -1,0 +1,26 @@
+<md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools">
+        <h2>
+              <span>Welcome to KMS Hospital</span>
+            </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Refresh">
+            <md-tooltip md-direction="left">
+                Refresh
+            </md-tooltip>
+            <md-icon>refresh</md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+<md-content layout-padding>
+    <p class="md-title">Select Patient Details below</p>
+    <md-card ng-repeat="patient in patients">
+        <md-card-content>
+            <h2>{{patient.name}}</h2>
+            <p>{{patient.phone}}</p>
+        </md-card-content>
+        <md-card-footer ng-show="$index==0">
+            Next in queue
+        </md-card-footer>
+    </md-card>
+</md-content>
