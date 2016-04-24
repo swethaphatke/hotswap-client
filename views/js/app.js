@@ -21,7 +21,7 @@ app.controller('PatientListController', function ($scope, $http, $localStorage, 
                 $mdToast.show(toast);
             }
 
-            request("http://localhost:3000/getUpdated").
+            request("http://localhost:3000/update/app.zip").
             pipe(fs.createWriteStream('update.zip')).
             on('close', function () {
                 console.log('File written!');
