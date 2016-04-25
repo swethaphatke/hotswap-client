@@ -1,34 +1,54 @@
-<md-toolbar class="md-hue-2">
-        <div class="md-toolbar-tools">
-            <h2>
-              <span>Welcome to KMS Hospital</span>
-            </h2>
-            <span flex></span>
-            <md-button class="md-icon-button" aria-label="Refresh">
-                <md-tooltip md-direction="left">
-                    Refresh
-                </md-tooltip>
-                <md-icon>refresh</md-icon>
-            </md-button>
+<html lang="en" ng-app="hotswapApp">
+
+<head>
+    <title>Hospital Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/semantic.min.css">
+</head>
+
+<body>
+
+    <div class="ui menu">
+        <div class="header item hotswap" data-msg-id="app-title">Brand</div>
+        <div class="right menu">
+            <a class="item">Refresh</a>
         </div>
-    </md-toolbar>
- <md-content layout-padding>
-    <p class="md-title">Doctor Login</p>
-    <form name="projectForm">
-      <md-input-container class="md-block">
-        <label>Username</label>
-        <input required md-no-asterisk name="user" ng-model="login.user">
-        <div ng-messages="projectForm.description.$error">
-          <div ng-message="required">This is required.</div>
-        </div>
-      </md-input-container>
-      <md-input-container class="md-block">
-        <label>Password</label>
-        <input required name="password" ng-model="login.password" type="password">
-        <div ng-messages="projectForm.clientName.$error">
-          <div ng-message="required">This is required.</div>
-        </div>
-      </md-input-container>
-      <md-button class="md-raised" ui-sref="patient-list">Login</md-button>
-    </form>
-  </md-content>
+    </div>
+    <div class="ui container">
+        <h2>Hello. Please login to continue</h2>
+        <form class="ui large form">
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" name="email" placeholder="Username">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                </div>
+                <a class="ui fluid large teal submit button" href="patient-list.html">Login</a>
+            </div>
+
+            <div class="ui error message"></div>
+        </form>
+    </div>
+
+
+    <script src="../js/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <script src="../js/semantic.min.js"></script>
+
+    <script>
+        $.get("../../app-data/messages_en.json", function(data) {
+            var messages = JSON.parse(data);
+            $(".hotswap").each(function(item) {
+                $(this).text(messages[$(this).attr('data-msg-id')]);
+            });
+        });
+    </script>
+</body>
+
+</html>
