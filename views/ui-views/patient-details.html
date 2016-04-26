@@ -12,8 +12,22 @@
         <div class="header item hotswap" data-msg-id="app-title">Brand</div>
         <a class="item" href="patient-list.html"><i class="angle left icon"></i> Back</a>
         <div class="right menu">
-            <a class="item" href="login.html">Log Out</a>
-            <a class="item">Refresh</a>
+            <a class="item" href="login.html"><i class="sign out icon"></i> Log Out</a>
+            <a class="item" id="refresh"><i class="refresh icon"></i>
+ Refresh</a>
+        </div>
+    </div>
+    <div class="ui container">
+        <div class="ui icon message transition hidden close">
+            <i class="notched circle loading icon"></i>
+            <i class="close icon"></i>
+            <div class="content">
+                <div class="header">
+                    Update available
+                </div>
+                <p>Hold tight, your application will be updated soon.</p>
+            </div>
+
         </div>
     </div>
     <div class="ui container">
@@ -56,7 +70,23 @@
             $(".patient-name").html(patient.name);
             $(".patient-phone").html(patient.phone);
         });
-        console.log();
+
+        $('.message .close')
+            .on('click', function() {
+                $(this)
+                    .closest('.message')
+                    .transition('fade');
+            });
+
+
+        $("#refresh").on("click", function() {
+            $.get("http://localhost:3000/version", function(data) {
+                var version = data.version;
+                if (version > 0) {
+                    $(".hidden").removeClass("hidden");
+                }
+            })
+        });
     </script>
 </body>
 

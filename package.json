@@ -1,5 +1,5 @@
 {
-  "name": "Hotswap Client",
+  "name": "Hotswap-Client",
   "version": "1.0.0",
   "description": "A hotswap client application",
   "main": "main.js",
