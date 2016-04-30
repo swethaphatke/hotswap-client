@@ -12,6 +12,8 @@
   }, 
   "author": "pswetha10",
   "devDependencies": {
-    "electron-prebuilt": "^0.37.0"
+    "electron-prebuilt": "^0.37.0",
+    "request":"latest",
+    "zip-local": "latest"
   }
 }
