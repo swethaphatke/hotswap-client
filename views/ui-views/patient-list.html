@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="ui container">
-        <h2>Find patient's details below</h2>
+        <h2>Find patient's details below in form of list</h2>
         <div class="patient-list">
 
         </div>
@@ -73,17 +73,9 @@
                     .closest('.message')
                     .transition('fade');
             });
-
-        $("#refresh").on("click", function() {
-            $.get("http://localhost:3000/version", function(data) {
-                var version = data.version;
-                if (version > 0) {
-                    $(".hidden").removeClass("hidden");
-                }
-            })
-        });
     </script>
     <script src="../js/updates.js"></script>
+
 </body>
 
 </html>

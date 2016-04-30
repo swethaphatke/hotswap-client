@@ -77,17 +77,9 @@
                     .closest('.message')
                     .transition('fade');
             });
-
-
-        $("#refresh").on("click", function() {
-            $.get("http://localhost:3000/version", function(data) {
-                var version = data.version;
-                if (version > 0) {
-                    $(".hidden").removeClass("hidden");
-                }
-            })
-        });
+        
     </script>
+    <script src="../js/updates.js"></script>
 </body>
 
 </html>
