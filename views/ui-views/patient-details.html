@@ -48,35 +48,15 @@
     <script src="../js/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
     <script src="../js/patient-details.js"></script>
     <script src="../js/semantic.min.js"></script>
+    <script src="../js/hotswap.js"></script>
 
     <script>
-        $.get("../../app-data/messages_en.json", function(data) {
-            var messages = JSON.parse(data);
-            $(".hotswap").each(function(item) {
-                $(this).text(messages[$(this).attr('data-msg-id')]);
-            });
-        });
-        var patient_id = getUrlParameter('id');
-        var patient = null;
-        $.get("../../app-data/patient-list.json", function(data) {
-            var patients = JSON.parse(data).patient;
-
-            for (var i = 0; i < patients.length; i++) {
-                if (patients[i].id == patient_id) {
-                    patient = patients[i];
-                    break;
-                }
-            }
-            $(".patient-name").html(patient.name);
-            $(".patient-phone").html(patient.phone);
-        });
-
-        $('.message .close')
-            .on('click', function() {
-                $(this)
-                    .closest('.message')
-                    .transition('fade');
-            });
+        var commonObj = new common();
+        commonObj.loadMessages();
+        commonObj.closeMessage();
+        
+        var pdetails = new patientDetails();
+        pdetails.loadPatientDetails();
         
     </script>
     <script src="../js/updates.js"></script>

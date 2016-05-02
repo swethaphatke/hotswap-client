@@ -10,7 +10,7 @@
 
     <div class="ui menu">
         <div class="header item hotswap" data-msg-id="app-title">Brand</div>
-        
+
     </div>
     <div class="ui container">
         <h2>Hello. Please login to continue</h2>
@@ -38,14 +38,11 @@
 
     <script src="../js/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
     <script src="../js/semantic.min.js"></script>
+    <script src="../js/hotswap.js"></script>
 
     <script>
-        $.get("../../app-data/messages_en.json", function(data) {
-            var messages = JSON.parse(data);
-            $(".hotswap").each(function(item) {
-                $(this).text(messages[$(this).attr('data-msg-id')]);
-            });
-        });
+        var commonObj = new common();
+        commonObj.loadMessages();
     </script>
 </body>
 

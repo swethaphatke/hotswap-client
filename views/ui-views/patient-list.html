@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="ui container">
-        <h2>Find patient's details below in form of list</h2>
+        <h2>Find patient's details below</h2>
         <div class="patient-list">
 
         </div>
@@ -39,40 +39,16 @@
 
     <script src="../js/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
     <script src="../js/semantic.min.js"></script>
+    <script src="../js/hotswap.js"></script>
 
     <script>
-        $.get("../../app-data/messages_en.json", function(data) {
-            var messages = JSON.parse(data);
-            $(".hotswap").each(function(item) {
-                $(this).text(messages[$(this).attr('data-msg-id')]);
-            });
-        });
-
-        $.get("../../app-data/patient-list.json", function(data) {
-            var patients = JSON.parse(data).patient;
-            var template = '<div class="ui middle aligned selection list">' +
-                '<div class="item">' +
-                '<img class="ui avatar image" src="http://semantic-ui.com/images/avatar/small/helen.jpg">' +
-                '<div class="content">' +
-                '<a class="header" href="_href_">_name_</a>' +
-                '</div>' +
-                '</div>' +
-                '</div>';
-            var innerHTML = "";
-            for (var i = 0; i < patients.length; i++) {
-                var temp = template.replace("_name_", patients[i].name);
-                temp = temp.replace("_href_", "patient-details.html?id=" + patients[i].id);
-                innerHTML += temp;
-            }
-            $(".patient-list").html(innerHTML);
-        });
-
-        $('.message .close')
-            .on('click', function() {
-                $(this)
-                    .closest('.message')
-                    .transition('fade');
-            });
+        var commonObj = new common();
+        commonObj.loadMessages();
+        commonObj.closeMessage();
+        
+        var patientList = new patientList();
+        patientList.getPatientList();
+        
     </script>
     <script src="../js/updates.js"></script>
 
