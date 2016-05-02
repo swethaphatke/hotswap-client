@@ -14,6 +14,7 @@
   "devDependencies": {
     "electron-prebuilt": "^0.37.0",
     "request":"latest",
-    "zip-local": "latest"
+    "zip-local": "latest",
+    "fs-extra":"latest"
   }
 }
