@@ -7,10 +7,6 @@ if (!localStorage.getItem('appVersion')) {
     localStorage.setItem('appVersion', 1);
 }
 
-// var myNotification = new Notification('Updates available', {
-//   body: 'Hold tight, your application will be updated soon.'
-// });
-
 var updatedAppVersion = 0;
 $("#refresh").on("click", function () {
     var appVersion = localStorage.getItem('appVersion');
@@ -23,9 +19,12 @@ $("#refresh").on("click", function () {
             });
             updateApp();
         }else{
+            var myNotification = new Notification('You have latest updates installed', {
+                body: 'We will notify you again, when we roll in next update'
+            });
             console.log("no updates available");
         }
-    })
+    });
 });
 
 function updateApp() {
