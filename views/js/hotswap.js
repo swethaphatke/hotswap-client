@@ -26,7 +26,7 @@ var patientList = function () {
     that.getPatientList = function () {
         $.get("../../app-data/patient-list.json", function (data) {
             var patients = JSON.parse(data).patient;
-            var template = '<li class="list-group-item"><a href="_href_">_name_</a> waiting since from _min_ minutes </li>';
+            var template = '<li class="list-group-item"><a href="_href_">_name_</a> waiting since from _min_ min </li>';
             var innerHTML = "";
             for (var i = 0; i < patients.length; i++) {
                 var temp = template.replace("_name_", patients[i].name);
