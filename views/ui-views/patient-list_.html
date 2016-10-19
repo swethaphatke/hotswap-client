@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Welcome to Swetha's Hospital Management</title>
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	<link href="../css/bootstrap.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../css/jquery-ui.css" />
+	<link href="../css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- js -->
+	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../js/numscroller-1.0.js"></script>
+	<script>if (window.module) module = window.module;</script>
+
+	<!-- start-smoth-scrolling -->
+	<script type="text/javascript" src="../js/move-top.js"></script>
+	<script type="text/javascript" src="../js/easing.js"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					//$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+	<!-- start-smoth-scrolling -->
+
+	<!--start-date-piker-->
+	<script src="../js/jquery-ui.js"></script>
+	<!--/End-date-piker-->
+	<script src="../js/responsiveslides.min.js"></script>
+	<!--animate-->
+	<link href="../css/animate.css" rel="stylesheet" type="text/css" media="all">
+	<!--//end-animate-->
+</head>
+
+<body>
+	<!-- header -->
+	<div class="header wow zoomIn">
+		<div class="container">
+			<div class="header_left" data-wow-duration="2s" data-wow-delay="0.5s">
+				<ul>
+					<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+91 85535 18962</li>
+				</ul>
+			</div>
+			<div class="header_right">
+				<div class="login">
+					<ul>
+						<li><a href="index.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Logout</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //header -->
+	<div class="header-bottom ">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+					<div class="logo grid">
+						<div class="grid__item color-3">
+							<h1><a class="link link--nukun" href="index.html"><i></i>INFI<span>R</span>MARY</a></h1>
+						</div>
+					</div>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="menu menu--horatio">
+						<ul class="nav navbar-nav menu__list">
+							<!--<li class="menu__item menu__item--current"><a href="index.html" class="menu__link">Home</a></li>
+							<li class="menu__item"><a href="about.html" class="menu__link">About</a></li>-->
+						</ul>
+					</nav>
+				</div>
+			</nav>
+		</div>
+	</div>
+
+
+	<!-- content -->
+	<div class="content">
+		<div class="container">
+			<h2>Patient's List</h2>
+			<ul class="list-group patient-list">
+				
+			</ul>
+
+		</div>
+	</div>
+	<!-- //content -->
+	<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
+	<script src="../js/hotswap.js"></script>
+	<script>
+
+		var patientList = new patientList();
+        patientList.getPatientList();
+	</script>
+</body>
+
+</html>

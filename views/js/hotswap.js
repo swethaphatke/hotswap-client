@@ -26,22 +26,15 @@ var patientList = function () {
     that.getPatientList = function () {
         $.get("../../app-data/patient-list.json", function (data) {
             var patients = JSON.parse(data).patient;
-            var template = '<div class="ui middle aligned selection list">' +
-                '<div class="item">' +
-                '<img class="ui avatar image" src="http://semantic-ui.com/images/avatar/small/helen.jpg">' +
-                '<div class="content">' +
-                '<a class="header" href="_href_">_name_</a>' +
-                '</div>' +
-                '</div>' +
-                '</div>';
+            var template = '<li class="list-group-item"><a href="_href_">_name_</a> waiting since from _min_ minutes </li>';
             var innerHTML = "";
             for (var i = 0; i < patients.length; i++) {
                 var temp = template.replace("_name_", patients[i].name);
+                temp = temp.replace("_min_",Math.ceil(Math.random()*20));
                 temp = temp.replace("_href_", "patient-details.html?id=" + patients[i].id);
                 innerHTML += temp;
             }
             $(".patient-list").html(innerHTML);
-            that.listAlert();
         });
     };
     
